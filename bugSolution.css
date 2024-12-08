@@ -1,0 +1,14 @@
+To fix this issue, you should account for the padding and border in your `calc()` expression. If the parent element has a specific padding and/or border, adjust `calc()` accordingly.
+
+For example, if the parent has 10px padding on each side and a 2px border on each side, you would need to modify the CSS to:
+
+```css
+div {
+  width: calc(100% - 20px - 20px - 4px);
+  box-sizing: border-box;
+}
+```
+
+This ensures that the width is correctly calculated including the parent's padding and border.
+
+Alternatively, to avoid complex calculations, consider using a different approach like flexbox or grid layout which handles sizing and padding more intuitively.
