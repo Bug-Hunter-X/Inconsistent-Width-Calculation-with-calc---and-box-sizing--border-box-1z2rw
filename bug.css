@@ -1,0 +1,10 @@
+The following CSS rule may cause unexpected behavior in some browsers:
+
+```css
+div {
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+}
+```
+
+The issue is the combination of `calc()` and `box-sizing: border-box`. If the parent element has padding or border, the `calc()` function might not account for it correctly, leading to unexpected width calculations.  The `border-box` model includes padding and border in the element's total width.  The `calc()` function calculates the width before `box-sizing` is applied, resulting in incorrect dimensions.
